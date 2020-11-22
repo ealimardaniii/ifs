@@ -1,4 +1,4 @@
 export const IMAGES = {
-  BOY_AVATAR: require('assets/images/User Boy.png'),
-  GIRL_AVATAR: require('assets/images/User Girl.png'),
+  BOY_AVATAR: require('assets/images/UserBoy.png'),
+  GIRL_AVATAR: require('assets/images/UserGirl.png'),
 };
