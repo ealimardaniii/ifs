@@ -1,5 +1,5 @@
-import React from 'react';
-import {FlatList} from 'react-native';
+import React, {useRef} from 'react';
+import {FlatList, StyleSheet} from 'react-native';
 import {useSelector} from 'react-redux';
 import ChatItem from 'components/main/ChatItem';
 const CHAT_TEXT =
@@ -8,6 +8,7 @@ const Main = () => {
   //redux
   const messages = useSelector((state) => state.messages.message);
   //main
+  const scrollViewRef = useRef();
   return (
     <FlatList
       ListHeaderComponent={
@@ -17,10 +18,21 @@ const Main = () => {
           <ChatItem isBoy content={CHAT_TEXT} />
         </>
       }
+      style={styles.flatList}
       data={messages}
       keyExtractor={(item, index) => index.toString()}
       renderItem={(item) => <ChatItem isBoy content={item} />}
+      removeClippedSubviews
+      ref={scrollViewRef}
+      onContentSizeChange={(contentWidth, contentHeight) => {
+        scrollViewRef.current.scrollToEnd({animated: true});
+      }}
     />
   );
 };
 export default Main;
+const styles = StyleSheet.create({
+  flatList: {
+    paddingHorizontal: 15,
+  },
+});

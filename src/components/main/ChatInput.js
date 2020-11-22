@@ -2,9 +2,19 @@ import {COLORS} from 'global/colors';
 import React, {useState} from 'react';
 import {View, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {setMessage} from 'redux/Actions/Index';
+import {useDispatch} from 'react-redux';
 
 const ChatInput = (props) => {
+  //state
   const [input, setInput] = useState('');
+  //redux
+  const dispatch = useDispatch();
+  const set_message = (message) => {
+    dispatch(setMessage(message));
+    setInput('');
+  };
+  //main
   return (
     <View style={styles.container}>
       <TextInput
@@ -14,7 +24,9 @@ const ChatInput = (props) => {
         placeholder="Type something ..."
         multiline
       />
-      <TouchableOpacity style={styles.send_btn}>
+      <TouchableOpacity
+        onPress={() => set_message(input)}
+        style={styles.send_btn}>
         <Icon style={styles.send_icon} name="paper-plane" />
       </TouchableOpacity>
     </View>
