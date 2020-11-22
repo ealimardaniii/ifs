@@ -1,11 +1,11 @@
 import Layout from 'components/generic/Layout';
 import React from 'react';
-import {Text} from 'react-native';
+import Main from 'screens/Main';
 
 const App = () => {
   return (
     <Layout>
-      <Text>Start</Text>
+      <Main />
     </Layout>
   );
 };
