@@ -1,7 +1,8 @@
+import TextApp from 'components/shared/TextApp';
 import {COLORS} from 'global/colors';
 import {IMAGES} from 'global/images';
 import React from 'react';
-import {View, StyleSheet, Text, Image} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 
 const ChatItem = (props) => {
   const {isBoy} = props;
@@ -13,9 +14,10 @@ const ChatItem = (props) => {
         style={[styles.image, !isBoy && styles.image_girl]}
       />
       <View style={[styles.content, !isBoy && styles.content_girl]}>
-        <Text style={[styles.content_text, !isBoy && styles.content_text_girl]}>
+        <TextApp
+          style={[styles.content_text, !isBoy && styles.content_text_girl]}>
           {props.content}
-        </Text>
+        </TextApp>
       </View>
     </View>
   );
@@ -51,8 +53,7 @@ const styles = StyleSheet.create({
     flexShrink: 1,
     backgroundColor: COLORS.WHITE,
     borderRadius: 5,
-    paddingVertical: 10,
-    paddingHorizontal: 7.5,
+    padding: 10,
     elevation: 2,
     shadowColor: COLORS.DARK,
     shadowOffset: {
