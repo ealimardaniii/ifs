@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, StatusBar, ScrollView, SafeAreaView} from 'react-native';
+import {StyleSheet, StatusBar, View, SafeAreaView} from 'react-native';
 import {COLORS} from 'global/colors';
 import ChatInput from 'components/main/ChatInput';
 
@@ -7,7 +7,7 @@ const Layout = (props) => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={COLORS.LIGHT} />
-      <ScrollView style={styles.content}>{props.children}</ScrollView>
+      <View style={styles.content}>{props.children}</View>
       <ChatInput />
     </SafeAreaView>
   );

@@ -6,6 +6,7 @@ import {View, StyleSheet, Image} from 'react-native';
 
 const ChatItem = (props) => {
   const {isBoy} = props;
+  const {item} = props.content;
   return (
     <View style={isBoy ? styles.container : styles.container_girl}>
       <View style={[styles.corner, !isBoy && styles.corner_girl]} />
@@ -16,7 +17,7 @@ const ChatItem = (props) => {
       <View style={[styles.content, !isBoy && styles.content_girl]}>
         <TextApp
           style={[styles.content_text, !isBoy && styles.content_text_girl]}>
-          {props.content}
+          {item ?? props.content}
         </TextApp>
       </View>
     </View>

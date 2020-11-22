@@ -1,7 +1,7 @@
 import {SEND_MESSAGE} from 'redux/Actions/Type';
 
 const initialState = {
-  message: null,
+  message: ['hello'],
 };
 
 export default global = (state = initialState, action = {}) => {
