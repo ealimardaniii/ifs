@@ -25,7 +25,7 @@ export default ChatInput;
 const styles = StyleSheet.create({
   container: {
     backgroundColor: COLORS.WHITE,
-    position: 'absolute',
+    position: 'relative',
     flexDirection: 'row',
     alignItems: 'center',
     bottom: 0,

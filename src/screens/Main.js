@@ -10,6 +10,9 @@ const Main = () => {
       <ChatItem isBoy content={CHAT_TEXT} />
       <ChatItem isBoy content={CHAT_TEXT} />
       <ChatItem isBoy content={CHAT_TEXT} />
+      <ChatItem isBoy content={CHAT_TEXT} />
+      <ChatItem isBoy content={CHAT_TEXT} />
+      <ChatItem isBoy content={CHAT_TEXT} />
     </>
   );
 };
