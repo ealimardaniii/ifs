@@ -43,10 +43,10 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 25,
-    marginRight: 10,
+    marginRight: 15,
   },
   image_girl: {
-    marginLeft: 10,
+    marginLeft: 15,
     marginRight: 0,
   },
   content: {
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
     width: 15,
     height: 15,
     position: 'absolute',
-    left: 55,
+    left: 60,
     bottom: 15,
     transform: [{rotateZ: '45deg'}],
     elevation: 2,
