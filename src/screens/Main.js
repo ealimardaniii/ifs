@@ -8,6 +8,8 @@ const Main = () => {
       <ChatItem isBoy content={'Hey!'} />
       <ChatItem content={'Hi! How are you?'} />
       <ChatItem isBoy content={CHAT_TEXT} />
+      <ChatItem isBoy content={CHAT_TEXT} />
+      <ChatItem isBoy content={CHAT_TEXT} />
     </>
   );
 };
