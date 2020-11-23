@@ -5,9 +5,7 @@ import ChatItem from 'components/main/ChatItem';
 const CHAT_TEXT =
   "Good! I'm just reading this tutorial on a really cool chat SDK.\nHave you ever heard of\nCometChat?";
 const Main = () => {
-  //redux
   const messages = useSelector((state) => state.messages.message);
-  //main
   const scrollViewRef = useRef();
   return (
     <FlatList
@@ -20,13 +18,13 @@ const Main = () => {
       }
       style={styles.flatList}
       data={messages}
-      keyExtractor={(item, index) => index.toString()}
+      keyExtractor={(index) => index.toString()}
       renderItem={(item) => <ChatItem isBoy content={item} />}
       removeClippedSubviews
       ref={scrollViewRef}
-      onContentSizeChange={(contentWidth, contentHeight) => {
-        scrollViewRef.current.scrollToEnd({animated: true});
-      }}
+      onContentSizeChange={() =>
+        scrollViewRef.current.scrollToEnd({animated: true})
+      }
     />
   );
 };

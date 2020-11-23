@@ -2,24 +2,33 @@ import {COLORS} from 'global/colors';
 import React, {useState} from 'react';
 import {View, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {setMessage} from 'redux/Actions/Index';
+import {setMessage} from 'redux/Actions';
 import {useDispatch} from 'react-redux';
+import {FONTS} from 'global/fonts';
 
-const ChatInput = (props) => {
-  //state
+const ChatInput = () => {
   const [input, setInput] = useState('');
-  //redux
   const dispatch = useDispatch();
+
   const set_message = (message) => {
-    dispatch(setMessage(message));
-    setInput('');
+    let hasWhite = hasWhiteSpace(message);
+    if (!hasWhite) {
+      dispatch(setMessage(message));
+      setInput('');
+    }
   };
-  //main
+  const hasWhiteSpace = (string) => {
+    if (!string.replace(/\s/g, '').length) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.input}
-        onChangeText={(text) => setInput(text)}
+        onChangeText={setInput}
         value={input}
         placeholder="Type something ..."
         multiline
@@ -58,6 +67,7 @@ const styles = StyleSheet.create({
     maxHeight: 100,
     paddingHorizontal: 10,
     flex: 1,
+    fontFamily: FONTS.Robot,
   },
   send_btn: {
     width: 50,

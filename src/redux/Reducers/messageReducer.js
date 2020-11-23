@@ -1,4 +1,4 @@
-import {SEND_MESSAGE} from 'redux/Actions/Type';
+import {SEND_MESSAGE} from 'redux/Actions/type';
 
 const initialState = {
   message: [],
